@@ -16,7 +16,7 @@
         "test": "phpunit"
     },
     "extra": {
-        "branch-alias": { "dev-master": "3.x-dev" }
+        "branch-alias": { "dev-master": "4.x-dev" }
     },
     "keywords": ["ISO 3166", "ISO", "3166", "3166-1", "countries", "library"],
     "homepage": "https://github.com/Edward-git0/iso3166",
@@ -28,5 +28,6 @@
     "support": {
         "issues": "https://github.com/Edward-git0/iso3166/issues",
         "source": "https://github.com/Edward-git0/iso3166"
-    }
+    },
+    "minimum-stability": "stable" 
 }
