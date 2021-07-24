@@ -2,8 +2,6 @@
 
 A PHP library providing ISO 3166-1 data.
 
-![Tests](https://github.com/thephpleague/iso3166/workflows/Tests/badge.svg)
-[![Code Coverage](https://codecov.io/gh/thephpleague/iso3166/branch/master/graph/badge.svg)](https://codecov.io/gh/thephpleague/iso3166)
 ![License](https://img.shields.io/github/license/thephpleague/iso3166.svg)
 
 ## What is ISO 3166-1
@@ -22,8 +20,6 @@ $ composer require league/iso3166
 ```
 
 ## Using
-
-See [using](https://iso3166.thephpleague.com/using) section of the documentation.
 
 Quick guide:
 
@@ -54,7 +50,7 @@ Feel free to submit a pull request or create an issue.
 
 ## License
 
-league/iso3166 is licensed under the MIT license.
+Edward-git0/iso3166 is licensed under the MIT license.
 
 ## Source(s)
 
