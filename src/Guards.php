@@ -7,6 +7,13 @@
  * the LICENSE file that was distributed with this source code.
  */
 
+ /*
+ * *
+ * * Modified by Edward Yarian <edward.email0@gmail.com>
+ * * Removed exceptions to handle error messages
+ * *
+ * */
+
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
@@ -24,7 +31,10 @@ final class Guards
     public static function guardAgainstInvalidName($name)
     {
         if (!is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Expected $name to be of type string, got: %s', gettype($name)));
+            return false;
+            //throw new InvalidArgumentException(sprintf('Expected $name to be of type string, got: %s', gettype($name))); // Remove exception to control error message
+        } else {
+            return true;
         }
     }
 
@@ -38,12 +48,24 @@ final class Guards
      */
     public static function guardAgainstInvalidAlpha2($alpha2)
     {
+        $checks = 0;
+
         if (!is_string($alpha2)) {
-            throw new InvalidArgumentException(sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2)));
+            return false;
+            //throw new InvalidArgumentException(sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2))); // Remove exception to control error message
+        } else {
+            $checks = 1;
         }
 
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2));
+            return false;
+            //throw new DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2)); // Remove exception to control error message
+        } else {
+            if($checks == 1) { // Make sure the string check passes
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -57,12 +79,24 @@ final class Guards
      */
     public static function guardAgainstInvalidAlpha3($alpha3)
     {
+        $checks = 0;
+
         if (!is_string($alpha3)) {
-            throw new InvalidArgumentException(sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3)));
+            return false;
+            //throw new InvalidArgumentException(sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3))); // Remove exception to control error message
+        } else {
+            $checks = 1;
         }
 
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3));
+            return false;
+            //throw new DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3)); // Remove exception to control error message
+        } else {
+            if($checks == 1) { // Make sure the string check passes
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -76,12 +110,24 @@ final class Guards
      */
     public static function guardAgainstInvalidNumeric($numeric)
     {
+        $checks = 0;
+
         if (!is_string($numeric)) {
-            throw new InvalidArgumentException(sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric)));
+            return false;
+            //throw new InvalidArgumentException(sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric))); // Remove exception to control error message
+        } else {
+            $checks = 1;
         }
 
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new DomainException(sprintf('Not a valid numeric key: %s', $numeric));
+            return false;
+            //throw new DomainException(sprintf('Not a valid numeric key: %s', $numeric)); // Remove exception to control error message
+        } else {
+            if($checks == 1) { // Make sure the string check passes
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }
