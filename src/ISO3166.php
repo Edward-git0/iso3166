@@ -7,6 +7,13 @@
  * the LICENSE file that was distributed with this source code.
  */
 
+/*
+ * *
+ * * Modified by Edward Yarian <edward.email0@gmail.com>
+ * * Removed exceptions to handle error messages
+ * *
+ * */
+
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
@@ -40,9 +47,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function name($name)
     {
-        Guards::guardAgainstInvalidName($name);
+        $t = Guards::guardAgainstInvalidName($name);
 
-        return $this->lookup(self::KEY_NAME, $name);
+        if($t) {
+            return $this->lookup(self::KEY_NAME, $name);
+        } else {
+            return response()->json([
+                "errors" => [
+                    "title" => "Invalid name key for ISO3166."
+                ]
+            ], 422);
+        }
     }
 
     /**
@@ -50,9 +65,16 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function alpha2($alpha2)
     {
-        Guards::guardAgainstInvalidAlpha2($alpha2);
-
-        return $this->lookup(self::KEY_ALPHA2, $alpha2);
+        $t = Guards::guardAgainstInvalidAlpha2($alpha2);
+        if($t){
+            return $this->lookup(self::KEY_ALPHA2, $alpha2);
+        } else { 
+            return response()->json([
+                "errors" => [
+                    "title" => "Invalid alpha2 key for ISO3166."
+                 ]
+            ], 422);
+        }
     }
 
     /**
@@ -60,9 +82,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function alpha3($alpha3)
     {
-        Guards::guardAgainstInvalidAlpha3($alpha3);
+        $t = Guards::guardAgainstInvalidAlpha3($alpha3);
 
-        return $this->lookup(self::KEY_ALPHA3, $alpha3);
+        if($t) {
+            return $this->lookup(self::KEY_ALPHA3, $alpha3);
+        } else {
+            return response()->json([
+                "errors" => [
+                    "title" => "Invalid alpha3 key for ISO3166."
+                 ]
+            ], 422);
+        }
     }
 
     /**
@@ -70,9 +100,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function numeric($numeric)
     {
-        Guards::guardAgainstInvalidNumeric($numeric);
+        $t = Guards::guardAgainstInvalidNumeric($numeric);
 
-        return $this->lookup(self::KEY_NUMERIC, $numeric);
+        if($t){
+            return $this->lookup(self::KEY_NUMERIC, $numeric);
+        } else {
+            return response()->json([
+                "errors" => [
+                    "title" => "Invalid numeric key for ISO3166."
+                 ]
+            ], 422);
+        }
     }
 
     /**
