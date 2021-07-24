@@ -1,5 +1,5 @@
 {
-    "name": "e_league/iso3166",
+    "name": "edward/iso3166",
     "description": "ISO 3166-1 PHP Library",
     "autoload": {
         "psr-4": { "League\\ISO3166\\": "src" }
