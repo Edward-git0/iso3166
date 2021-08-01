@@ -4,6 +4,9 @@
     "autoload": {
         "psr-4": { "edward_y\\ISO3166\\": "src" }
     },
+    "autoload-dev": {
+        "psr-4": { "edward_y\\ISO3166\\": "src" }
+    },
     "require": {
         "php": "^7.3|^8.0"
     },
