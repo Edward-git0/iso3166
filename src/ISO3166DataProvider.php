@@ -7,6 +7,13 @@
  * the LICENSE file that was distributed with this source code.
  */
 
+/*
+ * *
+ * * Modified by Edward Yarian <edward.email0@gmail.com>
+ * * Removed exceptions to handle error messages
+ * *
+ * */
+
 namespace edward_y\ISO3166;
 
 interface ISO3166DataProvider
