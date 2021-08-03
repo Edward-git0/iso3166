@@ -52,11 +52,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if($t) {
             return $this->lookup(self::KEY_NAME, $name);
         } else {
-            return response()->json([
+            return false;
+/*            return response()->json([
                 "errors" => [
                     "title" => "Invalid name key for ISO3166."
                 ]
-            ], 422);
+            ], 422); */
         }
     }
 
@@ -69,11 +70,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if($t){
             return $this->lookup(self::KEY_ALPHA2, $alpha2);
         } else { 
-            return response()->json([
+            return false;
+/*            return response()->json([
                 "errors" => [
                     "title" => "Invalid alpha2 key for ISO3166."
                  ]
-            ], 422);
+            ], 422); */
         }
     }
 
@@ -87,11 +89,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if($t) {
             return $this->lookup(self::KEY_ALPHA3, $alpha3);
         } else {
-            return response()->json([
+            return false;
+/*            return response()->json([
                 "errors" => [
                     "title" => "Invalid alpha3 key for ISO3166."
                  ]
-            ], 422);
+            ], 422); */
         }
     }
 
@@ -105,11 +108,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if($t){
             return $this->lookup(self::KEY_NUMERIC, $numeric);
         } else {
-            return response()->json([
+            return false;
+/*            return response()->json([
                 "errors" => [
                     "title" => "Invalid numeric key for ISO3166."
                  ]
-            ], 422);
+            ], 422); */
         }
     }
 
