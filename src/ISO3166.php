@@ -14,10 +14,10 @@
  * *
  * */
 
-namespace League\ISO3166;
+namespace edward_y\ISO3166;
 
-use League\ISO3166\Exception\DomainException;
-use League\ISO3166\Exception\OutOfBoundsException;
+use edward_y\ISO3166\Exception\DomainException;
+use edward_y\ISO3166\Exception\OutOfBoundsException;
 
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
@@ -124,7 +124,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @param string $key
      *
-     * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
+     * @throws \edward_y\ISO3166\Exception\DomainException if an invalid key is specified
      *
      * @return \Generator
      */
@@ -173,7 +173,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      * @param string $key
      * @param string $value
      *
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
+     * @throws \edward_y\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
      *
      * @return array
      */
