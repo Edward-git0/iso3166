@@ -14,10 +14,10 @@
  * *
  * */
 
-namespace League\ISO3166;
+namespace edward_y\ISO3166;
 
-use League\ISO3166\Exception\DomainException;
-use League\ISO3166\Exception\InvalidArgumentException;
+use edward_y\ISO3166\Exception\DomainException;
+use edward_y\ISO3166\Exception\InvalidArgumentException;
 
 final class Guards
 {
@@ -26,7 +26,7 @@ final class Guards
      *
      * @param string $name
      *
-     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
+     * @throws \edward_y\ISO3166\Exception\InvalidArgumentException if input is not a string
      */
     public static function guardAgainstInvalidName($name)
     {
@@ -43,8 +43,8 @@ final class Guards
      *
      * @param string $alpha2
      *
-     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key
+     * @throws \edward_y\ISO3166\Exception\InvalidArgumentException if input is not a string
+     * @throws \edward_y\ISO3166\Exception\DomainException if input does not look like an alpha2 key
      */
     public static function guardAgainstInvalidAlpha2($alpha2)
     {
@@ -74,8 +74,8 @@ final class Guards
      *
      * @param string $alpha3
      *
-     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha3 key
+     * @throws \edward_y\ISO3166\Exception\InvalidArgumentException if input is not a string
+     * @throws \edward_y\ISO3166\Exception\DomainException if input does not look like an alpha3 key
      */
     public static function guardAgainstInvalidAlpha3($alpha3)
     {
@@ -105,8 +105,8 @@ final class Guards
      *
      * @param string $numeric
      *
-     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like a numeric key
+     * @throws \edward_y\ISO3166\Exception\InvalidArgumentException if input is not a string
+     * @throws \edward_y\ISO3166\Exception\DomainException if input does not look like a numeric key
      */
     public static function guardAgainstInvalidNumeric($numeric)
     {
