@@ -7,9 +7,16 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace League\ISO3166;
+/*
+ * *
+ * * Modified by Edward Yarian <edward.email0@gmail.com>
+ * * Removed exceptions to handle error messages
+ * *
+ * */
 
-use League\ISO3166\Exception\DomainException;
+namespace edward_y\ISO3166;
+
+use edward_y\ISO3166\Exception\DomainException;
 
 final class ISO3166DataValidator
 {
@@ -26,7 +33,7 @@ final class ISO3166DataValidator
     }
 
     /**
-     * @throws \League\ISO3166\Exception\DomainException if given data entry does not have all the required keys
+     * @throws \edward_y\ISO3166\Exception\DomainException if given data entry does not have all the required keys
      */
     private function assertEntryHasRequiredKeys(array $entry)
     {
